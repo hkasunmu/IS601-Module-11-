@@ -1,85 +1,105 @@
 
+
 # IS601 Module 11 - Calculation Model
 
 ## Project Overview
 
-This project builds on my previous Module 9 and
-Module 10 assignments. For Module 11, I added
-a Calculation model using SQLAlchemy and
-Pydantic validation to make sure calculations
-are processed correctly.
+For Module 11, I built on my previous Python,
+FastAPI, and PostgreSQL assignments.
+
+I created a Calculation model using SQLAlchemy,
+added Pydantic validation, and implemented a
+Factory Pattern for arithmetic operations.
 
 ## Features
 
 - SQLAlchemy Calculation model
 - Pydantic input and output validation
 - Addition, Subtraction, Multiplication, Division
-- Factory Pattern for calculation operations
-- Division-by-zero error handling
+- Factory Pattern
+- Division-by-zero validation
 - PostgreSQL database integration
-- Automated testing with pytest
+- Automated pytest testing
 - GitHub Actions CI/CD
-- Docker support
+- Docker Hub deployment
 
 ## Technologies Used
 
-- Python
-- SQLAlchemy
-- Pydantic
-- PostgreSQL
-- pytest
-- Docker
-- GitHub Actions
-- FastAPI
+Python, FastAPI, PostgreSQL, SQLAlchemy,
+Pydantic, pytest, Docker, and GitHub Actions.
 
-## How to Run the Tests
+## Running the Project
 
-1. Download or clone the repository.
-2. Open the project in VS Code.
-3. Install the required packages:
+1. Clone the GitHub repository.
+2. Open the project folder in VS Code.
+3. Install the dependencies:
 
-    py -m pip install -r requirements.txt
+   py -m pip install -r requirements.txt
 
-4. Create a .env file containing your own
-   POSTGRES_PASSWORD, PGADMIN_DEFAULT_EMAIL,
-   and PGADMIN_DEFAULT_PASSWORD.
+4. Create a .env file containing:
+   POSTGRES_PASSWORD
+   PGADMIN_DEFAULT_EMAIL
+   PGADMIN_DEFAULT_PASSWORD
 
 5. Start PostgreSQL:
 
-    docker compose up -d db
+   docker compose up -d db
 
-6. Set DATABASE_URL to connect to PostgreSQL
-   on localhost port 5434 using your own password.
+6. Configure DATABASE_URL using the PostgreSQL
+   username, your password, localhost port 5434,
+   and the fastapi_db database.
 
 7. Run all tests:
 
-    py -m pytest -v
+   py -m pytest -v
 
-## Testing
+## Testing Results
 
-The project includes unit tests, validation
-tests, and PostgreSQL integration tests.
+All 22 tests passed during local testing.
 
-During local testing, all 22 tests passed.
+Tests cover:
+- Arithmetic operations
+- Pydantic schema validation
+- Invalid calculation types
+- Division by zero
+- Database storage
+- PostgreSQL integration
+- Existing user functionality
 
-## GitHub Actions
+## CI/CD Pipeline
 
-GitHub Actions is configured to run automated
-tests using a PostgreSQL service container.
+GitHub Actions successfully:
+- Installed project dependencies
+- Ran automated Python tests
+- Built the Docker image
+- Completed Trivy security scanning
+- Pushed the image to Docker Hub
 
 ## Docker Hub
 
-Docker Hub deployment will be configured and
-the image link added here after verification.
+Docker repository:
+https://hub.docker.com/r/hkasunmu/is601-module11
+
+Pull the Docker image:
+
+   docker pull hkasunmu/is601-module11:latest
+
+The application requires PostgreSQL configuration
+to use database-dependent functionality.
 
 ## GitHub Repository
 
 https://github.com/hkasunmu/IS601-Module-11-
 
+## Submission Screenshots
+
+### GitHub Actions
+![GitHub Actions](screenshots/module11_github_actions.png)
+
+### Docker Hub
+![Docker Hub](screenshots/module11_dockerhub.png)
+
 ## Reflection
 
-For Module 11, I learned how to create a
-Calculation model and validate information
-using Pydantic. I also learned how to test
-calculations with PostgreSQL and use GitHub
-Actions to automate testing.
+My Module 11 reflection is available in
+MODULE11_REFLECTION.md.

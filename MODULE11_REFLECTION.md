@@ -8,6 +8,6 @@ I also worked with the Factory Pattern, which helped organize the different math
 
 One challenge I experienced was getting PostgreSQL to connect properly. My previous Module 9 Docker container was already using the same port, which caused an error. I had to change the port and configure my environment variables before getting the database running. I also had some issues with my integration tests, but I was able to resolve them.
 
-After making these corrections, I successfully ran all 22 tests locally. I also configured GitHub Actions for automated testing and Docker Hub deployment. However, GitHub Actions experienced delays, so I still needed to verify the online workflow.
+After making these corrections, I successfully ran all 22 tests locally. I also configured GitHub Actions for automated testing and Docker Hub deployment. I also configured GitHub Actions to automatically run my tests, scan the Docker image, and deploy it to Docker Hub. At first, GitHub Actions was experiencing delays, which made me think something was wrong with my project. However, the workflows eventually ran successfully, and I was able to confirm that my Docker image was published. This helped me better understand how automated testing and deployment work together.
 
 Overall, this assignment helped me become more comfortable with Python testing, database models, Docker, and CI/CD. Although I faced challenges, I learned more about identifying errors and correcting them instead of starting everything over.
